@@ -1,0 +1,27 @@
+{
+    "name": "vesparny/silex-simple-rest",
+    "type": "library",
+    "description": "A skeletone rest api based on Silex",
+    "keywords": [
+        "framework", "silex", "rest", "api"
+    ],
+    "homepage": "http://github.com/vesparny/silex-simple-rest",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alessandro Arnodo",
+            "email": "alessandro@arnodo.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "1.0.*",
+        "monolog/monolog": "1.2.*",
+        "symfony/validator": "2.1.*",
+        "igorw/config-service-provider": "1.0"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {"Vesparny": "src/", "App" : ""}
+    }
+}
