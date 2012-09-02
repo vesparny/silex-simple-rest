@@ -7,4 +7,8 @@ require_once(ROOT_PATH."/vendor/autoload.php");
 
 $app = require(ROOT_PATH."/src/vesparny/bootstrap/boot.php");
 
-$app->run();
+if ($app['debug']) {
+    $app->run();
+}else{
+	$app['http_cache']->run();
+}

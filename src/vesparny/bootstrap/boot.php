@@ -7,19 +7,41 @@ use Igorw\Silex\ConfigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Monolog\Logger;
-use App\Routes\Def;
+use App\Routes\Api;
+use Vesparny\Silex\Provider\Service\BusinessServiceProvider;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Silex\Provider\HttpCacheServiceProvider;
+
 
 
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', "On");
 
 $app = new Application();
 $app->register(new ValidatorServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 $app->register(new SessionServiceProvider());
 
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'driver'   => 'pdo_mysql',
+        'dbname'     => "silex",
+        'host'     => "localhost",
+        'user'     => "root",
+        'password'     => "root"
+    ),
+));
+
+$app->register(new HttpCacheServiceProvider(), array(   'http_cache.cache_dir' => APP_PATH.'/cache/',   ));
+
+$app->register(new BusinessServiceProvider(), array("business.container" => array(
+    "api"      => "App\\Business\\Api"
+)));
+
 $env = getenv('APP_ENV') ? getenv('APP_ENV') : 'dev';
-//$app->register(new ConfigServiceProvider(APP_PATH."/config/$env.json"));
+$app->register(new ConfigServiceProvider(APP_PATH."/config/$env.json"));
 
 $app->register(new MonologServiceProvider(), array(
     'monolog.logfile' => APP_PATH."/logs/app.log",
@@ -28,17 +50,25 @@ $app->register(new MonologServiceProvider(), array(
     
 ));
 
+$app->mount('/api', new Api());
 
-$app->match("/", function(){
-	
-	
-})->bind('homepage');
-
-$app->get("/a", function() use ($app){
-	
-	return $app->redirect($app['url_generator']->generate('homepage'));
+$app->get('/', function () use ($app) {
+    echo "home";
+    //$subRequest = Request::create("/api");
+    //return $app->handle($subRequest);
 });
 
-// definitions
+
+$app->error(function (\Exception $e, $code) {
+    switch ($code) {
+        case 404:
+            $message = 'The requested page could not be found.';
+            break;
+        default:
+            $message = 'We are sorry, but something went terribly wrong.';
+    }
+
+    return new Response($message, $code);
+});
 
 return $app;
