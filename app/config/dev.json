@@ -1,4 +1,10 @@
 {
 	"debug": true,
-	"base.route": "api"
+	"database.connection" : {
+		"driver": "pdo_mysql",
+		"dbname": "silex",
+		"host": "localhost",
+		"user": "root",
+		"password": "root"
+	}
 }

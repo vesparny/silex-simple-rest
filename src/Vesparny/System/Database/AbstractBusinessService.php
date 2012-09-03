@@ -10,7 +10,7 @@ abstract class AbstractBusinessService
 
     public $db;
 
-    public function __construct(Connection $db)
+    public function __construct(Connection $db = null)
     {
         $this->db = $db;
     }

@@ -1,4 +1,3 @@
 {
-	"debug": false,
-	"base.route": "api"
+	"debug": false
 }

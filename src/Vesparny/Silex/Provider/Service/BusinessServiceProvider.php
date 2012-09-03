@@ -12,7 +12,12 @@ class BusinessServiceProvider implements ServiceProviderInterface
         $app->before(function() use ($app) {
             foreach ($app["business.container"] as $label => $class) {
                 $app["business.".$label] = $app->share(function() use ($class, $app) {
-                   return new $class($app['db']); 
+                	if ($app->offsetExists("db")){
+                		return new $class($app['db']);
+                	}else{
+                		return new $class;
+                	}
+                   
                 });
             }
         });
