@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Routes;
+namespace Classes\Routes;
 
 use Silex\ControllerProviderInterface;
 use Silex\Application;

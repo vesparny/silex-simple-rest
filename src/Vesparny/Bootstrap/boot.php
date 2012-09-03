@@ -7,7 +7,7 @@ use Igorw\Silex\ConfigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Monolog\Logger;
-use App\Routes\Api;
+use Classes\Routes\Api;
 use Vesparny\Silex\Provider\Service\BusinessServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,7 +37,7 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 $app->register(new HttpCacheServiceProvider(), array(   'http_cache.cache_dir' => APP_PATH.'/cache/',   ));
 
 $app->register(new BusinessServiceProvider(), array("business.container" => array(
-    "api"      => "App\\Business\\Api"
+    "api"      => "Classes\\Business\\Api"
 )));
 
 $env = getenv('APP_ENV') ? getenv('APP_ENV') : 'dev';
@@ -50,14 +50,14 @@ $app->register(new MonologServiceProvider(), array(
     
 ));
 
-$app->mount('/api', new Api());
+
 
 $app->get('/', function () use ($app) {
-    echo "home";
-    //$subRequest = Request::create("/api");
-    //return $app->handle($subRequest);
+    $request = Request::create("/api/", 'GET');
+    return $app->handle($request, HttpKernelInterface::SUB_REQUEST);
 });
 
+$app->mount('/api', new Api());
 
 $app->error(function (\Exception $e, $code) {
     switch ($code) {

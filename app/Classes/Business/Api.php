@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Business;
+namespace Classes\Business;
 
 use Vesparny\System\Database\AbstractBusinessService;
 

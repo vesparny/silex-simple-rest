@@ -23,6 +23,6 @@
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {"Vesparny": "src/", "App" : ""}
+        "psr-0": {"Vesparny": "src/", "Classes" : "app/"}
     }
 }
