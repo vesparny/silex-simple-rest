@@ -1,7 +1,7 @@
 {
     "name": "vesparny/silex-simple-rest",
     "type": "library",
-    "description": "A skeletone rest api based on Silex",
+    "description": "A simple silex skeleton for rest api",
     "keywords": [
         "framework", "silex", "rest", "api"
     ],
