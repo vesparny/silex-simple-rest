@@ -14,6 +14,8 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Silex\Provider\HttpCacheServiceProvider;
 
 
+define('ROOT_PATH',    __DIR__ . '/..');
+define('APP_PATH',   ROOT_PATH . '/app');
 
 $app = new Application();
 $app->register(new UrlGeneratorServiceProvider());
@@ -34,14 +36,14 @@ if ($env === "dev"){
 	ini_set('display_errors', 1);
 	ini_set('log_errors', 1);
 }
-
+/*
 //create connection if configured
 if ($app->offsetExists("database.connection")) {
 	$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 			"db.options" => $app["database.connection"],
 	));
 }
-
+*/
 //registering logger
 $app->register(new MonologServiceProvider(), array(
 		"monolog.logfile" => APP_PATH."/logs/".date("Y-m-d").".log",
@@ -59,7 +61,7 @@ foreach ($routes as $file){
 		$app->mount("/".strtolower($exploded[0]), new $routeToLoad);
 	}
 }
-
+/*
 //load business components
 $businessDir  = APP_PATH."/Classes/Business";
 $business = scandir($businessDir);
@@ -70,7 +72,7 @@ foreach ($business as $file){
 	}
 }
 $app->register(new BusinessServiceProvider(),array("business.container" =>  $arryToLoad));
-
+*/
 //handling calls to the root to a default route manager
 $app->get("/", function () use ($app) {
 	$request = Request::create($app["base.route"], "GET");

@@ -16,6 +16,10 @@
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "1.0.*",
+        "symfony/browser-kit": "2.1.*",
+        "symfony/css-selector": "2.1.*",
+        "symfony/finder": "2.1.*",
+        "symfony/process": "2.1.*",
         "monolog/monolog": "1.2.*",
         "symfony/validator": "2.1.*",
         "igorw/config-service-provider": "1.0",

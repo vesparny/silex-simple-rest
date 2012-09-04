@@ -4,7 +4,7 @@ namespace Classes\Business;
 
 use Vesparny\System\Database\AbstractBusinessService;
 
-class Api extends AbstractBusinessService
+class Api
 {
 	public function getTableName()
 	{

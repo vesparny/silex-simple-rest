@@ -16,12 +16,13 @@ class Api implements ControllerProviderInterface
 		$controllers = $app['controllers_factory'];
 
 		$controllers->get('/', function (Application $app) {
-			$post = $app['business.api']->getAll();
-			return $app->json($post);
+			//$post = $app['business.api']->getAll();
+			//return $app->json($post);
+			echo "success response";
 		});
 		
-		$controllers->get('/hello', function (Application $app) {
-			return $app->abort(401);
+		$controllers->get("hello", function (Application $app) {
+			return "s"		;
 		});
 
 		return $controllers;
