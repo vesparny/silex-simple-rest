@@ -5,6 +5,6 @@
 		"dbname": "silex",
 		"host": "localhost",
 		"user": "root",
-		"password": "root"
+		"password": ""
 	}
 }
