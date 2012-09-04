@@ -5,3 +5,8 @@ php:
 
 env:
  - APP_ENV=dev
+
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - composer install
