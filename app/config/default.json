@@ -1,6 +1,6 @@
 {
 	"debug": true,
-	"database" : {},
+	"database": {},
 	"base.route": "/api/",
 	"log.level": 100
 }
