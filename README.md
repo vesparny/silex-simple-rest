@@ -64,7 +64,7 @@ Fell free to contribute, fork, pull request, hack. Thanks!
 
 +	[@vesparny](https://twitter.com/vesparny)
 
-+	[http://alessandro.arnodo.net](http://alessandro.arnodo.net)
++	[http://arnodo.net](http://arnodo.net)
 
 +	<mailto:alessandro@arnodo.net>
 
