@@ -1,6 +1,6 @@
 # Silex Simple REST [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest)
 
-A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](https://alessandro.arnodo.net).
+A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://www..arnodo.net).
 
 Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
 
