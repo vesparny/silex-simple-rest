@@ -22,7 +22,7 @@
         "symfony/process": "2.1.*",
         "monolog/monolog": "1.2.*",
         "symfony/validator": "2.1.*",
-        "igorw/config-service-provider": "1.0",
+        "igorw/config-service-provider": "1.0.x-dev",
         "doctrine/dbal": "2.2.*"
     },
     "minimum-stability": "dev",
