@@ -68,6 +68,7 @@ $business = scandir($businessDir);
 $arryToLoad = array();
 foreach ($business as $file){
 	if (pathinfo($file, PATHINFO_EXTENSION) === "php"){
+		$exploded = explode(".", $file);
 		$arryToLoad[strtolower($exploded[0])] = "Classes\\Business\\".$exploded[0];
 	}
 }
