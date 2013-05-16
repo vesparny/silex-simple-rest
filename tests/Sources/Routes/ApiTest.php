@@ -4,10 +4,24 @@ use Silex\WebTestCase;
 
 class ApiTest extends WebTestCase
 {
+     
+    public $app = null;
+
+    static private $instance = null;
+
+    //Create App Singleton
+    static public function getInstance()
+    {
+        if (null === self::$instance) {
+             self::$instance =  require __DIR__.'/../../../src/boot.php';
+        }
+         return self::$instance;
+    }
+    
     public function createApplication()
     {
-        $app = require __DIR__.'/../../../src/boot.php';
-        return $app;
+        $this->app = ApiTest::getInstance();
+        return $this->app;
     }
 
     public function testRoot()
