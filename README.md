@@ -4,7 +4,7 @@
 
 A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://alessandro.arnodo.net).
 
-**This project wants to be a starting point to writing scalable and maintainable REST api in with Silex micro-framework**
+**This project wants to be a starting point to writing scalable and maintainable REST api with Silex PHP micro-framework**
 
 Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
 
@@ -30,15 +30,17 @@ From the root folder run the following command to run tests.
     vendor/bin/phpunit 
 
 
-####How does it work
+####What you will get
 The api will respond to
 
 	GET  ->   http://localhost:9001/api/v1/notes
 	POST ->   http://localhost:9001/api/v1/notes/{id}
 	POST ->   http://localhost:9001/api/v1/notes
 	DELETE -> http://localhost:9001/api/v1/notes/{id}
-	
+
+####What's under the hood
 Take a look at the source code, it's self explanatory :)
+More documentation and info about the code will be available soon.
 
 Under the resource folder you can find a .htaccess file to put the api in production.
 
