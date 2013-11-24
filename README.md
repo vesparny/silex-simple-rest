@@ -1,5 +1,5 @@
 # Silex Simple REST
-[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/nesbot/carbon) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/nesbot/carbon) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest)[![Dependencies Status](https://depending.in/vesparny/silex-simple-rest.png)](http://depending.in/vesparny/silex-simple-rest)
+[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/nesbot/carbon) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/nesbot/carbon) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest) [![Dependency Status](https://www.versioneye.com/user/projects/52925eba632bac8d4d0000c1/badge.png)](https://www.versioneye.com/user/projects/52925eba632bac8d4d0000c1)
 
 
 A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://alessandro.arnodo.net).
