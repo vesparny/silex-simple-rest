@@ -1,11 +1,10 @@
 language: php
 
 php:
-  - 5.3
+  - 5.4
 
 env:
  - APP_ENV=dev
-
 
 before_script:
   - wget http://getcomposer.org/composer.phar

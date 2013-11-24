@@ -1,9 +1,5 @@
 vendor
-composer.phar
-composer.lock
 .DS_Store
 app/logs/*.log
 *~
-.settings
-.project
-.buildpath
+.idea

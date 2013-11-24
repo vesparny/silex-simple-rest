@@ -1,8 +1,11 @@
 <?php
-require_once( __DIR__ ."/../vendor/autoload.php");
-$app = require( __DIR__ ."/../src/boot.php");
-if ($app['debug']) {
-    $app->run();
-}else{
-	$app['http_cache']->run();
-}
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$app = new Silex\Application();
+
+require __DIR__ . '/../resources/config/prod.php';
+
+require __DIR__ . '/../src/app.php';
+
+$app['http_cache']->run();

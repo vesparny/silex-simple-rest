@@ -1,66 +1,52 @@
-# Silex Simple REST [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest)
+# Silex Simple REST
+[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/nesbot/carbon) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/nesbot/carbon) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest)
 
 A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://alessandro.arnodo.net).
 
+**This project wants to be a starting point to writing scalable and maintainable REST api in with Silex micro-framework**
+
 Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
 
-## Setup
 
-Install as a project via composer:
+####How do I run it?
+From this folder run the following commands to install the php and bower dependencies, import some data, and run a local php server.
 
-    curl -s http://getcomposer.org/installer | php
-    php composer.phar create-project vesparny/silex-simple-rest
+You need at least php **5.4.*** with **SQLite extension** enabled and **Composer**
     
-or just download the tarball from github and install dependencies via composer:
+    composer install 
+    sqlite3 app.db < resources/sql/schema.sql
+    php -S 0:9001 -t web/
+    
+Your api is now available at http://localhost:9001/api/v1.
 
-    php composer.phar install
+The requests will be proxied to this url from the connect middleware.
 
-## Configuration
+####Run tests
+Some tests were written, and all CRUD operations are fully tested :)
 
-- Configure `RewriteBase /path/to/app` in `/web/.htaccess`
-- Create a database (an example mysql database is provided in `/docs/` folder).
-- Configure database access information in `/app/config/dev.json`.
+From the root folder run the following command to run tests.
+    
+    vendor/bin/phpunit 
 
-## Features
 
-Take a look to `/src/boot.php` to see how does it works.
+####How does it work
+The api will respond to
 
-Every files in the project follows [PSR-0 standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md).
+	GET  ->   http://localhost:9001/api/v1/notes
+	POST ->   http://localhost:9001/api/v1/notes/{id}
+	POST ->   http://localhost:9001/api/v1/notes
+	DELETE -> http://localhost:9001/api/v1/notes/{id}
+	
+Take a look at the source code, it's self explanatory :)
 
-In order to don't screw up autoloading it's important naming and declaring classes in `StudlyCaps`.
+Under the resource folder you can find a .htaccess file to put the api in production.
 
-- Every route file place in `/app/Classes/Routes/` is automatically loaded. (an example Api.php Route class is provided)
-- Same thing for file places in `/app/Classes/Business/`.
-- `/app/config/default.json` is overwritten by any configuration you place in `/app/config/$env.json`.
-- A logging file is created in `/app/logs/`, every day a new file is created (logging level is configurable).
-
-## Run tests
-
-phpunit is required for the tests, place your own in `/tests/` folder, following the namespace structure.
-
-	phpunit
-
-## Used packages
-
-Refer to single package documentation for more accurate support.
-
-	"silex/silex": "1.0.*",
-    "symfony/browser-kit": "2.1.*",
-    "symfony/css-selector": "2.1.*",
-    "symfony/finder": "2.1.*",
-    "symfony/process": "2.1.*",
-    "monolog/monolog": "1.2.*",
-    "symfony/validator": "2.1.*",
-    "igorw/config-service-provider": "1.0",
-	"doctrine/dbal": "2.2.*"
-
-## Contributing
+####Contributing
 
 Fell free to contribute, fork, pull request, hack. Thanks!
 
-## Author
+####Author
 
-####Alessandro Arnodo
 
 +	[@vesparny](https://twitter.com/vesparny)
 
@@ -71,3 +57,9 @@ Fell free to contribute, fork, pull request, hack. Thanks!
 ## License
 
 see LICENSE file.
+
+
+
+
+
+
