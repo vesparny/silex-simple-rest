@@ -20,8 +20,6 @@ You need at least php **5.4.*** with **SQLite extension** enabled and **Composer
     
 Your api is now available at http://localhost:9001/api/v1.
 
-The requests will be proxied to this url from the connect middleware.
-
 ####Run tests
 Some tests were written, and all CRUD operations are fully tested :)
 
@@ -42,7 +40,7 @@ The api will respond to
 Take a look at the source code, it's self explanatory :)
 More documentation and info about the code will be available soon.
 
-Under the resource folder you can find a .htaccess file to put the api in production.
+Under the resources folder you can find a .htaccess file to put the api in production.
 
 ####Contributing
 
