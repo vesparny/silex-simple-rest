@@ -1,5 +1,5 @@
 # Silex Simple REST
-[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest) [![Dependency Status](https://www.versioneye.com/user/projects/53d0e4e6cca8ff0cdb00006e/badge.png)](https://www.versioneye.com/user/projects/52925eba632bac8d4d0000c1)
+[![Latest Stable Version](https://poser.pugx.org/vesparny/silex-simple-rest/v/stable.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Total Downloads](https://poser.pugx.org/vesparny/silex-simple-rest/downloads.png)](https://packagist.org/packages/vesparny/silex-simple-rest) [![Build Status](https://secure.travis-ci.org/vesparny/silex-simple-rest.png)](http://travis-ci.org/vesparny/silex-simple-rest) [![Dependency Status](https://www.versioneye.com/user/projects/53d0e4eacca8fffeb200006d/badge.png)](https://www.versioneye.com/user/projects/53d0e4eacca8fffeb200006d)
 
 
 A simple silex skeleton application for writing RESTful API. Developed and maintained by [Alessandro Arnodo](http://alessandro.arnodo.net).
@@ -9,7 +9,7 @@ A simple silex skeleton application for writing RESTful API. Developed and maint
 Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
 
 ####How do I run it?
-After download the last [release](https://github.com/vesparny/silex-simple-rest/releases), from the root folder of the project, run the following commands to install the php and bower dependencies, import some data, and run a local php server.
+After download the last [release](https://github.com/vesparny/silex-simple-rest/releases), from the root folder of the project, run the following commands to install the php dependencies, import some data, and run a local php server.
 
 You need at least php **5.4.*** with **SQLite extension** enabled and **Composer**
     
@@ -35,7 +35,7 @@ From the root folder run the following command to run tests.
 The api will respond to
 
 	GET  ->   http://localhost:9001/api/v1/notes
-	POST ->   http://localhost:9001/api/v1/notes
+	PUT ->   http://localhost:9001/api/v1/notes
 	POST ->   http://localhost:9001/api/v1/notes/{id}
 	DELETE -> http://localhost:9001/api/v1/notes/{id}
 
