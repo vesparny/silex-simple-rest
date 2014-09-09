@@ -35,8 +35,8 @@ From the root folder run the following command to run tests.
 The api will respond to
 
 	GET  ->   http://localhost:9001/api/v1/notes
-	PUT ->   http://localhost:9001/api/v1/notes
-	POST ->   http://localhost:9001/api/v1/notes/{id}
+	POST ->   http://localhost:9001/api/v1/notes
+	PUT ->   http://localhost:9001/api/v1/notes/{id}
 	DELETE -> http://localhost:9001/api/v1/notes/{id}
 
 Your request should have 'Content-Type: application/json' header.
