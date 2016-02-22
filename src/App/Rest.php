@@ -132,15 +132,10 @@ final class Rest
 
         //TODO fetch endpoints from database
         /**
-         * Register any new services for endpoints
+         * Register any new services for endpoints, map service name to whatever class names
          */
         $controllerMapping = array(
-            'companies'      => 'Companies',
-            'customers'      => 'Customers',
-            'customer-types' => 'CustomerTypes',
-            'remissions'     => 'Remissions',
-            'waste'          => 'Waste',
-            'waste-types'    => 'WasteTypes'
+            'notes'      => 'Notes'
         );
 
         foreach ($controllerMapping as $service => $controller) {
