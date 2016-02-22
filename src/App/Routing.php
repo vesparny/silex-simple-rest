@@ -14,7 +14,7 @@ class Routing
     /**
      * @var string
      */
-    private $controller;
+    private $mappedClass;
 
     /**
      * Routing constructor.

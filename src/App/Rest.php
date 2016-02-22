@@ -138,8 +138,8 @@ final class Rest
             'notes'      => 'Notes'
         );
 
-        foreach ($controllerMapping as $service => $controller) {
-            $routing = new \App\Routing($this->api, $service, $controller);
+        foreach ($controllerMapping as $service => $mappedClass) {
+            $routing = new \App\Routing($this->api, $service, $mappedClass);
             $routing->register();
         }
     }
