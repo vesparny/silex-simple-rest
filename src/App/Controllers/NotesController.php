@@ -17,8 +17,7 @@ class NotesController extends \App\Controller
 
         return array(
             'get' => array(
-                $endpoint => $endpoint.".controller:getAll",
-                $endpoint."/flush" => $endpoint.".controller:flush"
+                $endpoint => $endpoint.".controller:getAll"
             ),
             'post'=> array(
                 $endpoint => $endpoint.".controller:save"
