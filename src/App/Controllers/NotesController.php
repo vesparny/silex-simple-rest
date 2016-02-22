@@ -1,53 +1,35 @@
 <?php
 
 namespace App\Controllers;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 
-class NotesController
+class NotesController extends \App\Controller
 {
 
-    protected $notesService;
-
-    public function __construct($service)
+    /**
+     * Array of endpoints to expose in the api
+     *
+     * @return array
+     */
+    public function endpoints()
     {
-        $this->notesService = $service;
-    }
+        $endpoint = $this->getControllerName();
 
-    public function getAll()
-    {
-        return new JsonResponse($this->notesService->getAll());
-    }
-
-    public function save(Request $request)
-    {
-
-        $note = $this->getDataFromRequest($request);
-        return new JsonResponse(array("id" => $this->notesService->save($note)));
-
-    }
-
-    public function update($id, Request $request)
-    {
-        $note = $this->getDataFromRequest($request);
-        $this->notesService->update($id, $note);
-        return new JsonResponse($note);
-
-    }
-
-    public function delete($id)
-    {
-
-        return new JsonResponse($this->notesService->delete($id));
-
-    }
-
-    public function getDataFromRequest(Request $request)
-    {
-        return $note = array(
-            "note" => $request->request->get("note")
+        return array(
+            'get' => array(
+                $endpoint => $endpoint.".controller:getAll",
+                $endpoint."/flush" => $endpoint.".controller:flush"
+            ),
+            'post'=> array(
+                $endpoint => $endpoint.".controller:save"
+            ),
+            'put'=> array(
+                $endpoint."/{id}" => $endpoint.".controller:update"
+            ),
+            'delete'=>array(
+                $endpoint."/{id}" => $endpoint.".controller:delete"
+            )
         );
+
     }
 }
