@@ -13,13 +13,8 @@ class NotesServiceTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $app = new Application();
-        $app->register(new DoctrineServiceProvider(), array(
-            "db.options" => array(
-                "driver" => "pdo_sqlite",
-                "memory" => true
-            ),
-        ));
+        $rest = new \App\Rest('dev');
+        $app  = $rest->api;
         $this->noteService = new NotesService($app["db"]);
 
         $stmt = $app["db"]->prepare("CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT,note VARCHAR NOT NULL)");
