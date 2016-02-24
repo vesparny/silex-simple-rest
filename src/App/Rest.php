@@ -17,7 +17,7 @@ final class Rest
     /**
      * @var Application
      */
-    private $api;
+    public $api;
 
     /**
      * @var array $dbConfig Database configuration params
