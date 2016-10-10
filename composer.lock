@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b600df8c7558308de5cc94779eef054",
-    "content-hash": "e0c613ff1a6f523949aad516e763c6d8",
+    "hash": "865606e8c8a6dd18262bf26aa5d34e1e",
+    "content-hash": "4ffdf62a7200dc2d1a90cd3ad182e935",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -475,6 +475,46 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "euskadi31/cors-service-provider",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/euskadi31/CorsServiceProvider.git",
+                "reference": "6169e66bec79cbd80c918b6e65c8af91997f7683"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/euskadi31/CorsServiceProvider/zipball/6169e66bec79cbd80c918b6e65c8af91997f7683",
+                "reference": "6169e66bec79cbd80c918b6e65c8af91997f7683",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~2.0@dev"
+            },
+            "require-dev": {
+                "leaphub/phpcs-symfony2-standard": "~2.0.1",
+                "phpunit/phpunit": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Euskadi31\\Silex\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Axel Etcheverry",
+                    "email": "axel@etcheverry.biz"
+                }
+            ],
+            "description": "A CORS Service Provider for Silex 2.0",
+            "time": "2016-06-15 09:40:15"
         },
         {
             "name": "monolog/monolog",
