@@ -17,9 +17,9 @@ class RoutesLoader
 
     private function instantiateControllers()
     {
-        $this->app['notes.controller'] = $this->app->share(function () {
+        $this->app['notes.controller'] = function() {
             return new Controllers\NotesController($this->app['notes.service']);
-        });
+        };
     }
 
     public function bindRoutesToControllers()
