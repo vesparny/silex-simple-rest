@@ -5,6 +5,11 @@ namespace App\Services;
 class NotesService extends BaseService
 {
 
+    public function getOne($id)
+    {
+        return $this->db->fetchAssoc("SELECT * FROM notes WHERE id=?", [(int) $id]);
+    }
+
     public function getAll()
     {
         return $this->db->fetchAll("SELECT * FROM notes");

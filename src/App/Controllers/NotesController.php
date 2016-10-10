@@ -16,6 +16,11 @@ class NotesController
         $this->notesService = $service;
     }
 
+    public function getOne($id)
+    {
+        return new JsonResponse($this->notesService->getOne($id));
+    }
+
     public function getAll()
     {
         return new JsonResponse($this->notesService->getAll());
