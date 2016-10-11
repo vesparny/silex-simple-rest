@@ -24,6 +24,15 @@ class NotesServiceTest extends \PHPUnit_Framework_TestCase
 
         $stmt = $app["db"]->prepare("CREATE TABLE notes (id INTEGER PRIMARY KEY AUTOINCREMENT,note VARCHAR NOT NULL)");
         $stmt->execute();
+
+        $stmt = $app["db"]->prepare("INSERT INTO notes (note) VALUES ('dummynote')");
+        $stmt->execute();
+    }
+
+    public function testGetOne()
+    {
+        $data = $this->noteService->getOne(1);
+        $this->assertEquals('dummynote', $data['note']);
     }
 
     public function testGetAll()
@@ -37,7 +46,7 @@ class NotesServiceTest extends \PHPUnit_Framework_TestCase
         $note = array("note" => "arny");
         $data = $this->noteService->save($note);
         $data = $this->noteService->getAll();
-        $this->assertEquals(1, count($data));
+        $this->assertEquals(2, count($data));
     }
 
     function testUpdate()
@@ -57,7 +66,7 @@ class NotesServiceTest extends \PHPUnit_Framework_TestCase
         $this->noteService->save($note);
         $this->noteService->delete(1);
         $data = $this->noteService->getAll();
-        $this->assertEquals(0, count($data));
+        $this->assertEquals(1, count($data));
     }
 
 }
