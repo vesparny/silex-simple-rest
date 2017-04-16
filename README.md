@@ -8,7 +8,7 @@ A simple silex skeleton application for writing RESTful API. Developed and maint
 
 Continuous Integration is provided by [Travis-CI](http://travis-ci.org/).
 
-####How do I run it?
+#### How do I run it?
 After download the last [release](https://github.com/vesparny/silex-simple-rest/releases), from the root folder of the project, run the following commands to install the php dependencies, import some data, and run a local php server.
 
 You need at least php **5.5.9*** with **SQLite extension** enabled and **Composer**
@@ -23,7 +23,7 @@ You can install the project also as a composer project
     
 Your api is now available at http://localhost:9001/api/v1.
 
-####Run tests
+#### Run tests
 Some tests were written, and all CRUD operations are fully tested :)
 
 From the root folder run the following command to run tests.
@@ -31,7 +31,7 @@ From the root folder run the following command to run tests.
     vendor/bin/phpunit 
 
 
-####What you will get
+#### What you will get
 The api will respond to
 
 	GET  ->   http://localhost:9001/api/v1/notes
@@ -60,17 +60,17 @@ Try with curl:
 	#DELETE
 	curl -X DELETE http://localhost:9001/api/v1/notes/1 -H 'Content-Type: application/json' -w "\n"
 
-####What's under the hood
+#### What's under the hood
 Take a look at the source code, it's self explanatory :)
 More documentation and info about the code will be available soon.
 
 Under the resources folder you can find a .htaccess file to put the api in production.
 
-####Contributing
+#### Contributing
 
 Fell free to contribute, fork, pull request, hack. Thanks!
 
-####Author
+#### Author
 
 
 +	[@vesparny](https://twitter.com/vesparny)
