@@ -6,7 +6,14 @@ define("ROOT_PATH", __DIR__ . "/..");
 
 $app = new Silex\Application();
 
-require __DIR__ . '/../resources/config/prod.php';
+switch ($_SERVER['SERVER_NAME']) {
+    case "localhost":
+        require __DIR__ . '/../resources/config/dev.php';
+        break;
+    default:
+        require __DIR__ . '/../resources/config/prod.php';
+        break;
+}
 
 require __DIR__ . '/../src/app.php';
 
