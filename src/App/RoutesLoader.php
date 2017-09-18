@@ -12,12 +12,11 @@ class RoutesLoader
     {
         $this->app = $app;
         $this->instantiateControllers();
-
     }
 
     private function instantiateControllers()
     {
-        $this->app['notes.controller'] = function() {
+        $this->app['notes.controller'] = function () {
             return new Controllers\NotesController($this->app['notes.service']);
         };
     }
@@ -35,4 +34,3 @@ class RoutesLoader
         $this->app->mount($this->app["api.endpoint"].'/'.$this->app["api.version"], $api);
     }
 }
-
